@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.today-birthdays" path="/org/gnome/shell/extensions/today-birthdays/">
+    <key name="upcoming-days" type="i">
+      <default>14</default>
+      <range min="1" max="365"/>
+      <summary>Nombre de jours à venir</summary>
+      <description>Affiche les anniversaires qui arriveront dans ce nombre de jours.</description>
+    </key>
+    <key name="goa-account-id" type="s">
+      <default>''</default>
+      <summary>Identifiant du compte GNOME Online Accounts</summary>
+      <description>Identifiant du compte sélectionné dans Comptes en ligne.</description>
+    </key>
+    <key name="webdav-url" type="s">
+      <default>''</default>
+      <summary>URL du carnet WebDAV / CardDAV</summary>
+      <description>URL complète du carnet d'adresses CardDAV (préremplie depuis Comptes en ligne ou saisie manuellement).</description>
+    </key>
+    <key name="webdav-username" type="s">
+      <default>''</default>
+      <summary>Utilisateur WebDAV</summary>
+      <description>Identifiant utilisateur pour l'authentification CardDAV.</description>
+    </key>
+    <key name="webdav-password" type="s">
+      <default>''</default>
+      <summary>Mot de passe d'application WebDAV</summary>
+      <description>Mot de passe d'application utilisé si le trousseau système n'est pas accessible directement.</description>
+    </key>
+  </schema>
+</schemalist>
