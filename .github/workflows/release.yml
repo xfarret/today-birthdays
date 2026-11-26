@@ -1,0 +1,27 @@
+name: Build Extension ZIP
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install schema compiler
+        run: sudo apt-get update && sudo apt-get install -y libglib2.0-dev-bin zip
+
+      - name: Compile GSettings schema and zip
+        run: |
+          glib-compile-schemas schemas/
+          zip -r today-birthdays@xfarret.zip . -x "*.git*" ".github/*"
+
+      - name: Upload Release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: today-birthdays@xfarret.zip
