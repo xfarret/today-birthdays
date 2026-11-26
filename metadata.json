@@ -1,10 +1,10 @@
 {
-  "uuid": "today-birthdays@example.local",
+  "uuid": "today-birthdays@xfarret",
   "name": "Today's Birthdays",
   "description": "Displays today's and upcoming contact birthdays using GNOME Online Accounts via D-Bus and WebDAV/CardDAV.",
   "shell-version": [
     "50"
   ],
   "settings-schema": "org.gnome.shell.extensions.today-birthdays",
-  "url": "https://example.local"
+  "url": "https://github.com/xfarret/today-birthdays"
 }
