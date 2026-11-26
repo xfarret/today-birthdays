@@ -33,10 +33,16 @@ Install the extension archive:
    gnome-extensions install --force today-birthdays@xfarret.shell-extension.zip
    ```
 
+
+---
+
 ## Troubleshooting
    ```bash
    journalctl -f -o cat /usr/bin/gnome-shell | grep --line-buffered "\[today-birthdays\]"
    ```
+
+
+---
 
 ## Development
 
