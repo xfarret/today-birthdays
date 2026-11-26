@@ -14,16 +14,16 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install build tools
-        run: sudo apt-get update && sudo apt-get install -y libglib2.0-dev-bin zip
+        run: sudo apt-get update && sudo apt-get install -y libglib2.0-dev-bin zip jq
 
       - name: Prepare extension packages
         run: |
-          UUID="today-birthdays@xfarret"
+          UUID=$(jq -r '.uuid' metadata.json)
           STAGE_DIR="/tmp/stage/${UUID}"
           mkdir -p "${STAGE_DIR}"
 
-          # Copie uniquement les fichiers de l'extension (adaptez la liste si besoin)
-          cp -r extension.js prefs.js metadata.json stylesheet.css schemas "${STAGE_DIR}/"
+          # Copie uniquement les fichiers de l'extension
+          cp -r extension.js prefs.js metadata.json schemas icons "${STAGE_DIR}/"
 
           # 1. ZIP pour extensions.gnome.org (sans gschemas.compiled)
           (
@@ -42,5 +42,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            today-birthdays@xfarret.zip
-            today-birthdays@xfarret-ego.zip
+            *.zip
