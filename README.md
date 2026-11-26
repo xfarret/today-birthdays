@@ -28,6 +28,16 @@ A lightweight **GNOME Shell 50** top-bar extension that fetches your contacts di
 
 ### From the Release ZIP Package
 
-1. Install the extension archive:
+Install the extension archive:
    ```bash
    gnome-extensions install --force today-birthdays@xfarret.shell-extension.zip
+   ```
+
+## Troubleshooting
+   ```bash
+   journalctl -f -o cat /usr/bin/gnome-shell | grep --line-buffered "\[today-birthdays\]"
+   ```
+
+## Development
+
+This project is developed with the assistance of AI tools. All changes are planned or approved by the author, and all AI-generated code is reviewed and tested before it is merged.
